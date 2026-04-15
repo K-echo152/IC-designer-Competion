@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+E:/Projects/FPGAProjects/IC-designer-Competion/butterfly.v,1775914927,verilog,,E:/Projects/FPGAProjects/IC-designer-Competion/twiddle_rom.v,,butterfly,,,,,,,,
+E:/Projects/FPGAProjects/IC-designer-Competion/fft_1024_tb.v,1775915003,verilog,,,,fft_1024_tb,,,,,,,,
+E:/Projects/FPGAProjects/IC-designer-Competion/fft_1024_top.v,1775914600,verilog,,E:/Projects/FPGAProjects/IC-designer-Competion/fft_1024_tb.v,,fft_1024_top,,,,,,,,
+E:/Projects/FPGAProjects/IC-designer-Competion/twiddle_rom.v,1775909740,verilog,,E:/Projects/FPGAProjects/IC-designer-Competion/fft_1024_top.v,,twiddle_rom,,,,,,,,

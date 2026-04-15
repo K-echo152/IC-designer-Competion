@@ -1,0 +1,1 @@
+"fft_1024_tb" -debug "typical" -s "fft_sim" 
