@@ -1,0 +1,215 @@
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do run_modelsim.do
+# 0
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 16:21:57 on Apr 16,2026
+# vlog -reportprogress 300 -work work ../rtl/butterfly.v 
+# -- Compiling module butterfly
+# 
+# Top level modules:
+# 	butterfly
+# End time: 16:21:57 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 16:21:57 on Apr 16,2026
+# vlog -reportprogress 300 -work work ../rtl/twiddle_rom.v 
+# -- Compiling module twiddle_rom
+# 
+# Top level modules:
+# 	twiddle_rom
+# End time: 16:21:57 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 16:21:57 on Apr 16,2026
+# vlog -reportprogress 300 -work work ../rtl/fft_1024_top.v 
+# -- Compiling module fft_1024_top
+# 
+# Top level modules:
+# 	fft_1024_top
+# End time: 16:21:57 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 16:21:57 on Apr 16,2026
+# vlog -reportprogress 300 -work work ../sim/fft_1024_tb.v 
+# -- Compiling module fft_1024_tb
+# 
+# Top level modules:
+# 	fft_1024_tb
+# End time: 16:21:57 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -voptargs=""+acc"" work.fft_1024_tb 
+# Start time: 16:21:57 on Apr 16,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 2 FSMs in module "fft_1024_top(fast)".
+# Loading work.fft_1024_tb(fast)
+# Loading work.fft_1024_top(fast)
+# Loading work.twiddle_rom(fast)
+# Loading work.butterfly(fast)
+# 
+# ========================================
+# Test 1: Impulse Input
+# ========================================
+# --- Output (first 16 points) ---
+#   X[   0] =  16384 + j*     0
+#   X[   1] =  16384 + j*     0
+#   X[   2] =  16384 + j*     0
+#   X[   3] =  16384 + j*     0
+#   X[   4] =  16384 + j*     0
+#   X[   5] =  16384 + j*     0
+#   X[   6] =  16384 + j*     0
+#   X[   7] =  16384 + j*     0
+#   X[   8] =  16384 + j*     0
+#   X[   9] =  16384 + j*     0
+#   X[  10] =  16384 + j*     0
+#   X[  11] =  16384 + j*     0
+#   X[  12] =  16384 + j*     0
+#   X[  13] =  16384 + j*     0
+#   X[  14] =  16384 + j*     0
+#   X[  15] =  16384 + j*     0
+# ---
+# Test 1: PASS - all 1024 bins correct
+# 
+# ========================================
+# Test 2: Random Input
+# ========================================
+# --- Output (first 16 points) ---
+#   X[   0] =  32767 + j*-32768
+#   X[   1] =  32767 + j*-32768
+#   X[   2] =  17317 + j*-20806
+#   X[   3] =  32767 + j*-32768
+#   X[   4] = -30739 + j*-16805
+#   X[   5] =  25489 + j*-32768
+#   X[   6] = -32768 + j*  4156
+#   X[   7] =  32767 + j* 32767
+#   X[   8] =   7181 + j* 14112
+#   X[   9] = -32768 + j*-32768
+#   X[  10] = -32768 + j* 13842
+#   X[  11] =  11916 + j*-32768
+#   X[  12] =  32767 + j* -5120
+#   X[  13] =  -2499 + j*-32768
+#   X[  14] =  32767 + j* 32767
+#   X[  15] = -32768 + j*-32768
+# ---
+# Test 2: Random test completed
+# 
+# ========================================
+# Test 3: DC Input (constant value)
+# ========================================
+# --- Output (first 16 points) ---
+#   X[   0] =  32767 + j*     0
+#   X[   1] =      2 + j*     0
+#   X[   2] =      1 + j*    -1
+#   X[   3] =      1 + j*     1
+#   X[   4] =      0 + j*     0
+#   X[   5] =      0 + j*     0
+#   X[   6] =      0 + j*     0
+#   X[   7] =      0 + j*     0
+#   X[   8] =      0 + j*     0
+#   X[   9] =      0 + j*     0
+#   X[  10] =      0 + j*     0
+#   X[  11] =      0 + j*     0
+#   X[  12] =      0 + j*     0
+#   X[  13] =      0 + j*     0
+#   X[  14] =      0 + j*     0
+#   X[  15] =      0 + j*     0
+# ---
+# Test 3: PASS - DC test correct
+# 
+# ========================================
+# All tests completed!
+# ========================================
+# 
+# ** Note: $finish    : ../sim/fft_1024_tb.v(267)
+#    Time: 1045145 ns  Iteration: 1  Instance: /fft_1024_tb
+# 1
+# Break in Module fft_1024_tb at ../sim/fft_1024_tb.v line 267
+# Causality operation skipped due to absence of debug database file
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
